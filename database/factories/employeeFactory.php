@@ -5,8 +5,10 @@
 use App\Model;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(\App\Models\Employee::class, function (Faker $faker) {
     return [
-        //
+        'ten' => $faker->name,
+        'tai_khoan' =>$faker->text(),
+        'mat_khau' =>$faker->password(),    
     ];
 });

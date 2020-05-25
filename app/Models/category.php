@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class category extends Model
+class Category extends Model
 {
     protected $table = 'categories';
     public $timestamps = false;
@@ -13,6 +13,9 @@ class category extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'last_update';
 
+    function products(){
+        return $this->hasMany('App\Models\Product');
+    }
 
     protected $fillable = [
         'name',

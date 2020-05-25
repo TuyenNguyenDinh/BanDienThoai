@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class product extends Model
+class Product extends Model
 {
     protected $table = 'products';
     public $timestamps = false;
@@ -13,21 +13,20 @@ class product extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'last_update';
 
+    function bill_detail(){
+        return $this->hasMany('App\Models\Bill_Detail');
+    }
+
+    function category(){
+        return $this->belongsTo('App\Models\Category');
+    }
 
     protected $fillable = [
-        'categoies_id',
+        'category_id',
         'ten',
         'anh',
         'gia_sp',
         'so_luong',
-        'kich_thuoc',
-        'trong_luong',
-        'mau_sac',
-        'am_thanh',
-        'bo_nho',
-        'OS',
-        'camera',
-        'pin',
-        'ket_noi',
+        'thong_tin_cu_the',
     ];
 }

@@ -15,22 +15,13 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->unsignedBigInteger('categories_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('ten');
             $table->string('anh');
             $table->double('gia_sp')->default(0);
             $table->integer('so_luong');
-            $table->string('kich_thuoc');
-            $table->string('trong_luong');
-            $table->string('mau_sac');
-            $table->string('am_thanh');
-            $table->string('bo_nho');
-            $table->string('OS');
-            $table->string('camera');
-            $table->string('pin');
-            $table->string('ket_noi');
+            $table->string('thong_tin_cu_the');
             $table->timestamps();
-            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
