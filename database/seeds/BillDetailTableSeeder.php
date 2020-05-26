@@ -11,6 +11,6 @@ class BillDetailTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Bill_detail::class,  5)->create();
+        factory(App\Models\BillDetail::class,  5)->create();
     }
 }

@@ -5,7 +5,7 @@
 use App\Model;
 use Faker\Generator as Faker;
 
-$factory->define(App\Models\Bill_detail::class, function (Faker $faker) {
+$factory->define(App\Models\BillDetail::class, function (Faker $faker) {
     $bill_ID = App\Models\Bill::pluck('id')->toArray();
     $product_ID = App\Models\Product::pluck('id')->toArray();
     return [

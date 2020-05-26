@@ -13,8 +13,8 @@ class Customer extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'last_update';
 
-    function bill_details(){
-        return $this->hasMany('App\Models\Bill_Detail');
+    function billDetails(){
+        return $this->hasMany('App\Models\BillDetail');
     }
 
 

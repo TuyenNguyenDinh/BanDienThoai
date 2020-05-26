@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BillDetailRequest;
 use App\Models\Bill_Detail;
+use App\Models\BillDetail;
 use Illuminate\Http\Request;
 
 class BillDetailController extends Controller
@@ -15,7 +16,7 @@ class BillDetailController extends Controller
      */
     public function index()
     {
-        $billdetail = Bill_Detail::all();
+        $billdetail = BillDetail::all();
         return view('billdetails.index', array('billdetails' => $billdetail));
     }
 
@@ -37,7 +38,7 @@ class BillDetailController extends Controller
      */
     public function store(BillDetailRequest $request)
     {
-        $billdetail = Bill_detail::create($request->all());
+        $billdetail = BillDetail::create($request->all());
         if ($billdetail) {
             return redirect()->route('billdetails.index');
         }
@@ -52,7 +53,7 @@ class BillDetailController extends Controller
      */
     public function show($id)
     {
-        $billdetail = \App\Models\Bill_Detail::find($id);
+        $billdetail = \App\Models\BillDetail::find($id);
         return view('billdetails.show', array('billdetails' => $billdetail));
     }
 

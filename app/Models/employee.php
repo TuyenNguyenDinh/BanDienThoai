@@ -19,6 +19,9 @@ class Employee extends Model
 
     protected $fillable = [
         'ten',
+        'ngay_sinh',
+        'dia_chi',
+        'sdt',
         'tai_khoan',
         'mat_khau',
     ];

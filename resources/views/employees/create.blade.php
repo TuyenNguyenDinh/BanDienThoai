@@ -19,6 +19,15 @@
         </span>
         @endif
 
+        <label>{{ trans('employee.label.ngay_sinh')}}</label></br>
+        <input name="ngay_sinh"></br>
+
+        <label>{{ trans('employee.label.dia_chi')}}</label></br>
+        <input name="dia_chi"></br>
+
+        <label>{{ trans('employee.label.sdt')}}</label></br>
+        <input name="sdt"></br>
+
         <label>{{ trans('employee.label.tai_khoan')}}</label></br>
         <input name="tai_khoan"></br>
 

@@ -14,6 +14,9 @@
             <tr>
                 <td>{{ $employee->id}}</td>
                 <td>{{ $employee->ten}}</td>
+                <td>{{ $employee->ngay_sinh}}</td>
+                <td>{{ $employee->dia_chi}}</td>
+                <td>{{ $employee->sdt}}</td>
                 <td>{{ $employee->tai_khoan}}</td>
                 <td>{{ $employee->mat_khau}}</td>
             </tr>

@@ -14,6 +14,9 @@ return [
     */
     //form input
     'label.ten' => 'Name',
+    'label.ngay_sinh' => 'Ngày sinh',
+    'label.dia_chi' => 'Địa chỉ',
+    'label.sdt' => 'Số điện thoại',
     'label.tai_khoan' => 'Username',
     'label.mat_khau' => 'Password',
 

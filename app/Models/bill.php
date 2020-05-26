@@ -13,8 +13,8 @@ class Bill extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'last_update';
 
-    function bill_details(){
-        return $this->hasMany('App\Models\Bill_detail');
+    function billDetails(){
+        return $this->hasMany('App\Models\BillDetail');
     }
     function customers(){
         return $this->belongsTo('App\Models\Customer','customer_id');
