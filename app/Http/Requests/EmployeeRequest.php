@@ -34,7 +34,7 @@ class EmployeeRequest extends FormRequest
             'ten.required' => trans('Không được để trống'),
             'ten.min' => trans('Tên phải nhập z'),
             'ten.max' => 'ten khong qua 100 ki tu',
-            'tai_khoan.required' =>trans('Ko trống')
+            'tai_khoan.required' =>trans('Không được để trống trống')
         ];
     }
 }

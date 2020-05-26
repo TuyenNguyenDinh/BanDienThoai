@@ -13,7 +13,7 @@ class CategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|min:10|max:100',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => trans('Không được để trống'),
+            'name.min' => trans('Tên phải nhập hơn 10 kí tự'),
+            'name.max' => 'Tên không quá 100 kí tự',
         ];
     }
 }
