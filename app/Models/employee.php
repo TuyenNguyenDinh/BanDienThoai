@@ -13,7 +13,7 @@ class Employee extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'last_update';
 
-    function bill(){
+    function bills(){
         return $this->hasMany('App\Models\Bill');
     }
 

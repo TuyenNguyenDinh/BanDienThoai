@@ -13,11 +13,11 @@ class Bill_detail extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'last_update';
 
-    function product(){
+    function products(){
         return $this->belongsTo('App\Models\Product','product_id');
     }
 
-    function bill(){
+    function bills(){
         return $this->belongsTo('App\Models\Bill','bill_id');
     }
 

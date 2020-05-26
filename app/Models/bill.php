@@ -13,13 +13,13 @@ class Bill extends Model
     const CREATED_AT = 'creation_date';
     const UPDATED_AT = 'last_update';
 
-    function bill_detail(){
+    function bill_details(){
         return $this->hasMany('App\Models\Bill_detail');
     }
-    function customer(){
+    function customers(){
         return $this->belongsTo('App\Models\Customer','customer_id');
     }
-    function employee(){
+    function employees(){
         return $this->belongsTo('App\Models\Employee','employee_id');
     }
 
