@@ -24,15 +24,14 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'ten' => 'required|min:10|max:100',
+            'ten' => 'required|max:100',
         ];
     }
     public function messages()
     {
         return [
             'ten.required' => trans('Không được để trống'),
-            'ten.min' => trans('Tên phải nhập z'),
-            'ten.max' => 'ten khong qua 100 ki tu',
+            'ten.max' => 'tên không quá 100 kí tự',
         ];
     }
 }

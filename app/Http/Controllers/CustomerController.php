@@ -16,7 +16,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customer = Customer::all();
-        return view('customers.index', array('customers' => $customer));
+        return view('admin.customers.index', array('customers' => $customer));
     }
 
     /**
@@ -26,7 +26,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('customers.create');
+        return view('admin.customers.create');
     }
 
     /**
@@ -64,7 +64,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customer =Customer::find($id);
+        return view('admin.customers.edit', array('customer' => $customer));
     }
 
     /**
@@ -76,7 +77,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $customer = Customer::find($id);
+        $customer->update($request->all());
+        if($customer){
+            return redirect()->route('customers.index');
+        }
+        return redirect()->route('customers.edit');
     }
 
     /**
@@ -85,4 +91,9 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function destroy($id){
+        $customer = Customer::find($id);
+        $customer->delete();
+        return redirect()->route('customers.index');
+    }
 }

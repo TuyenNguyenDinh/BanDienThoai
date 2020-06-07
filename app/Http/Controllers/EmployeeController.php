@@ -16,7 +16,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employee = Employee::all();
-        return view('employees.index', array('employees' => $employee));
+        return view('admin.employees.index', array('employees' => $employee));
     }
 
     /**
@@ -26,7 +26,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employees.create');
+        return view('admin.employees.create');
     }
 
     /**
@@ -64,7 +64,8 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employee = Employee::find($id);
+        return view('admin.employees.edit', array('employee' => $employee));
     }
 
     /**
@@ -76,7 +77,12 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $employee = Employee::find($id);
+        $employee->update($request->all());
+        if($employee){
+            return redirect()->route('employees.index');
+        }
+        return redirect()->route('employees.edit');
     }
 
     /**
@@ -87,6 +93,8 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employee = Employee::find($id);
+        $employee->delete();
+        return redirect()->route('employees.index');
     }
 }
