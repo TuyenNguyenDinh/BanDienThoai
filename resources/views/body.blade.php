@@ -8,11 +8,11 @@
 <div class="container-fluid" style="width:100%; padding: 0px 0px 12px 0px;">
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
         <!-- Indicators -->
-        <!-- <ol class="carousel-indicators">
+        <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol> -->
+            </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">

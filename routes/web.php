@@ -11,35 +11,28 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('Welcome');
 });
 
-Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
-    return "post: $postId - comment: $commentId";
-});
-
-Route::get('/hello-word/{year}', function ($year) {
-    echo ('hello word, ' . $year);
-    // return view('hello-word');
-});
-
-
 
 
 //Admin Panel
-Route::prefix('login')->group(function () {
-        Route::get('/', 'LoginController@login');
-        Route::post('/', 'LoginController@post_login');
-        Route::prefix('/')->group(function () {
-            Route::get('admin', function () {
-                return view('admin.index');
-            })->name('index');
-            Route::resource('categories', 'CategoryController');
-            Route::resource('products', 'ProductController');
-            Route::resource('employees', 'EmployeeController');
-            Route::resource('customers', 'CustomerController');
-            Route::resource('bills', 'BillController');
-            Route::resource('billdetails', 'BillDetailController');
-        });
+Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    })->name('index');
+    Route::resource('categories', 'CategoryController');
+    Route::resource('products', 'ProductController');
+    Route::resource('employees', 'EmployeeController');
+    Route::resource('customers', 'CustomerController');
+    Route::resource('bills', 'BillController');
+    Route::resource('billdetails', 'BillDetailController');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
